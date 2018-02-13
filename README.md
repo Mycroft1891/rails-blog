@@ -1,24 +1,11 @@
-# README
+# Rails Blog Template
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Creating a blog in Rails has a lot of parts that are repetitive like posts, users, authentication, links, admin dashboard, file upload, etc. I made this to use it as starting point to create a blog.
 
-Things you may want to cover:
+## Gems used
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- bootstrap (design)
+- devise (authentication)
+- active_admin (admin panel)
+- active_admin_flat_skin (admin panel design)
+- carrierwave (file upload)
