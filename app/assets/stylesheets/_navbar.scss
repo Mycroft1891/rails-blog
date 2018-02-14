@@ -37,7 +37,7 @@
   }
   @media (min-width: 992px) {
     border-color: transparent;
-    background-color: transparent;
+    background-color: $primary;
     .navbar-brand {
       color: fade-out($white, .3);
       &:focus,
