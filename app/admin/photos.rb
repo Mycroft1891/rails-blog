@@ -5,9 +5,11 @@ ActiveAdmin.register Photo do
   index do
     id_column
     column :description
-    column :image
+    column :image do |photo|
+      link_to(photo.image.url, photo.image.url)
+    end
     column :preview do |photo|
-      image_tag(photo.image.url, width: 300)
+      image_tag(photo.image.url, width: 400)
     end
     actions
   end
@@ -22,9 +24,10 @@ ActiveAdmin.register Photo do
   end
 
   form do |f|
-    f.inputs do
+    f.inputs multipart: true do
       f.input :description
-      f.input :image
+      f.input :image, as: :file, hint: image_tag(f.object.image.url, width: 500)
+      f.input :image_cache, as: :hidden
     end
     f.actions
   end
