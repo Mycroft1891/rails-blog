@@ -2,3 +2,30 @@
 @import "active_admin/base";
 @import "active_admin_flat_skin";
 @import "font-awesome";
+@import 'activeadmin/medium_editor_input';
+@import 'activeadmin/medium_editor/themes/default.css';
+
+body.active_admin form .medium-editor-element {
+  border-radius: 0px;
+  display: inline-block;
+  max-height: 60%;
+  padding: 4px 6px 6px 6px;
+  width: calc(80% - 15px);
+  font-size: 1.2rem;
+}
+
+#main_content {
+  input {
+    font-size: 1.2rem;
+  }  
+}
+
+.medium-editor-toolbar {
+  top: 170px;
+  ul {
+    margin-bottom: 0px;
+  }
+  li button {
+    padding-bottom: 25px;
+  }
+}

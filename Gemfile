@@ -21,6 +21,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'devise', '~> 4.2'
 gem 'activeadmin'
 gem 'active_admin_flat_skin'
+gem 'activeadmin_medium_editor'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '4.7.0'
 
