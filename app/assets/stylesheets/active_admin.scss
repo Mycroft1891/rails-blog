@@ -8,7 +8,7 @@
 body.active_admin form .medium-editor-element {
   border-radius: 0px;
   display: inline-block;
-  max-height: 60%;
+  min-height: 30rem;
   padding: 4px 6px 6px 6px;
   width: calc(80% - 15px);
   font-size: 1.2rem;
@@ -17,7 +17,7 @@ body.active_admin form .medium-editor-element {
 #main_content {
   input {
     font-size: 1.2rem;
-  }  
+  }
 }
 
 .medium-editor-toolbar {
