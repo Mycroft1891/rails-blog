@@ -5,11 +5,16 @@
     <div class="col-lg-8">
       <!-- Title -->
       <h1 class="mt-4"><%= @post.title %></h1>
-      <hr>
       <!-- Date/Time -->
       <p>Posted on <%= @post.created_at.strftime("%B %d %Y") %></p>
       <hr>
       <%= simple_format @post.body %>
+      <hr>
+      <div class="tag-list">
+        <% @post.tags.each do |t| %>
+        <%= link_to "#{t.name}", t %>
+      </div>
+      <% end %>
     </div>
 
     <!-- Sidebar Widgets Column -->
@@ -33,32 +38,13 @@
         <h5 class="card-header">Categories</h5>
         <div class="card-body">
           <div class="row">
-            <div class="col-lg-6">
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#">Web Design</a>
-                </li>
-                <li>
-                  <a href="#">HTML</a>
-                </li>
-                <li>
-                  <a href="#">Freebies</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#">JavaScript</a>
-                </li>
-                <li>
-                  <a href="#">CSS</a>
-                </li>
-                <li>
-                  <a href="#">Tutorials</a>
-                </li>
-              </ul>
-            </div>
+            <ul class="list-group list-group-flush">
+              <% @tags.each do |tag| %>
+              <li class="list-group-item">
+                <%= link_to tag.name, tag %>
+              </li>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
