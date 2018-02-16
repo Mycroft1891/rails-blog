@@ -1,0 +1,24 @@
+<!-- Header - set the background image for the header in the line below -->
+<header class="py-5 bg-image-full" style="background-image: url('/1080.jpeg');">
+  <section id="contact" class="text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="section-heading"><%= @tag.name %></h1>
+          <hr class="my-4">
+          <p class="mb-5">Enjoy browsing this list of Posts you might like based on this tag</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<% @tag.posts.each do |post| %>
+<section class="py-3">
+  <div class="container">
+    <h2><%= link_to post.title, post %></h2>
+    <p class="lead"><%= truncate(sanitize(post.body, tags: []), length: 500 )%></p>
+  </div>
+</section>
+<hr>
+<% end %>
