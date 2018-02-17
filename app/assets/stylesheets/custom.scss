@@ -5,11 +5,18 @@
   img {
     max-width: 100%;
   }
+  #post-date {
+    color: #d3d3d3;
+  }
 }
 
 .tag-list {
   height: 4rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  a {
+    background-color: whitesmoke;
+    padding: .2rem 1rem;
+  }
 }
 
 .list-group-flush {

@@ -3,18 +3,14 @@
   <div class="row">
     <!-- Post Content Column -->
     <div class="col-lg-8">
-      <!-- Title -->
       <h1 class="mt-4"><%= @post.title %></h1>
-      <!-- Date/Time -->
-      <p>Posted on <%= @post.created_at.strftime("%B %d %Y") %></p>
-      <hr>
-      <%= simple_format @post.body %>
-      <hr>
+      <p id="post-date">Posted on <%= @post.created_at.strftime("%B %d %Y") %></p>
+      <hr><%= simple_format @post.body %><hr>
       <div class="tag-list">
         <% @post.tags.each do |t| %>
-        <%= link_to "#{t.name}", t %>
+          <%= link_to "#{t.name}", t %>
+        <% end %>
       </div>
-      <% end %>
     </div>
 
     <!-- Sidebar Widgets Column -->
@@ -40,9 +36,7 @@
           <div class="row">
             <ul class="list-group list-group-flush">
               <% @tags.each do |tag| %>
-              <li class="list-group-item">
-                <%= link_to tag.name, tag %>
-              </li>
+              <li class="list-group-item"><%= link_to tag.name, tag %></li>
               <% end %>
             </ul>
           </div>
