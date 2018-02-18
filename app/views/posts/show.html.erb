@@ -1,60 +1,26 @@
-<!-- Page Content -->
 <div class="container" id="show-container">
   <div class="row">
     <!-- Post Content Column -->
     <div class="col-lg-8">
       <h1 class="mt-4"><%= @post.title %></h1>
-      <p id="post-date">Posted on <%= @post.created_at.strftime("%B %d %Y") %></p>
-      <hr><%= simple_format @post.body %><hr>
-      <div class="tag-list">
-        <% @post.tags.each do |t| %>
-          <%= link_to "#{t.name}", t %>
-        <% end %>
-      </div>
+      <p id="post-date">
+        Posted on <%= @post.created_at.strftime("%B %d %Y") %>
+      </p>
+      <hr>
+      <%= simple_format @post.body %>
+      <hr>
+      <%= render 'tag_list', tags: @post.tags %>
     </div>
 
     <!-- Sidebar Widgets Column -->
     <div class="col-md-4">
-
       <!-- Search Widget -->
-      <div class="card my-4">
-        <h5 class="card-header">Search</h5>
-        <div class="card-body">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-secondary" type="button">Go!</button>
-            </span>
-          </div>
-        </div>
-      </div>
-
+      <%= render 'shared/search-box' %>
       <!-- Categories Widget -->
-      <div class="card my-4">
-        <h5 class="card-header">Categories</h5>
-        <div class="card-body">
-          <div class="row">
-            <ul class="list-group list-group-flush">
-              <% @tags.each do |tag| %>
-              <li class="list-group-item"><%= link_to tag.name, tag %></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+      <%= render 'categories' %>
       <!-- Side Widget -->
-      <div class="card my-4">
-        <h5 class="card-header">Side Widget</h5>
-        <div class="card-body">
-          You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-        </div>
-      </div>
-
+      <%= render 'sidebar' %>
     </div>
 
-  </div>
-  <!-- /.row -->
-
-</div>
-<!-- /.container -->
+  </div><!-- /.row -->
+</div><!-- /.container -->

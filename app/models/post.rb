@@ -9,8 +9,5 @@ class Post < ApplicationRecord
     new_and_found_tags = tag_list.collect { |t| Tag.find_or_create_by(name: t) }
     self.tags = new_and_found_tags
   end
-
-  def tag_list
-    self.tags.collect(&:name).join(', ')
-  end
+  
 end
