@@ -53,8 +53,9 @@ ActiveRecord::Schema.define(version: 20180215230955) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "views", default: 0
+    t.string "image"
     t.string "permalink"
+    t.integer "views", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
