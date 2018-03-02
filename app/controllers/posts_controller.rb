@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.all
+    render 'index_2'
   end
 
   def show
